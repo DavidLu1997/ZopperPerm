@@ -21,6 +21,8 @@ $RECYCLE.BIN/
 */bin/Release/*
 */obj/*
 *.csproj
+*.vsp
+*.psess
 
 # Windows shortcuts
 *.lnk
