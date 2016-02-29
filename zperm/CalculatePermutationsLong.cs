@@ -12,7 +12,7 @@ namespace zperm
         private string str;
 
         //Maximum factorial using ulong
-        private const uint maxF = 20;
+        private const int maxF = 20;
 
         //Number of total permutations, n!
         //Only computed once
@@ -30,12 +30,12 @@ namespace zperm
         private List<ulong> facts = new List<ulong>() { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200, 1307674368000, 20922789888000, 355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000};
 
         //Calculate factorial
-        private ulong factorial(uint n)
+        private ulong factorial(int n)
         {
             //If precomputed
             if(n < facts.Count) 
             {
-                return facts.ElementAt((int)n);
+                return facts[n];
             }
 
             //Otherwise return 0, signal to use BigInteger
@@ -48,7 +48,7 @@ namespace zperm
             this.str = s;
             if (s.Length < facts.Count)
             {
-                nF = facts.ElementAt(s.Length);
+                nF = facts[s.Length];
             }
         }
 
@@ -58,7 +58,7 @@ namespace zperm
             this.str = "";
             if (this.str.Length < facts.Count)
             {
-                nF = facts.ElementAt(str.Length);
+                nF = facts[str.Length];
             }
         }
 
@@ -69,7 +69,7 @@ namespace zperm
         }
 
         //Find permutations of length k
-        public List<string> perm(uint k, uint max = 10000)
+        public List<string> perm(int k, int max = 10000)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -83,16 +83,52 @@ namespace zperm
             //Calculate kF
             if (k < facts.Count)
             {
-                kF = facts.ElementAt((int)k);
+                kF = facts[k];
             }
 
-            //TODO: Code here
+            //Using Heap's Algorithm
+            //TODO: General implementation to come
+            if (k == str.Length)
+            {
+                List<int> p = new List<int>(new int[k]);
+                char[] n = str.ToCharArray();
+
+                for(int i = 0; i < p.Count; i++) {
+                    p[i] = 0;
+                }
+
+                //Add initial string
+                l.Add(str);
+
+                //Start index and jndex
+                int idx = 1;
+                int jdx = 0;
+                char tmp;
+                while (idx < k)
+                {
+                    if (p[idx] < idx)
+                    {
+                        jdx = idx % 2 * p[idx];
+                        tmp = n[jdx];
+                        n[jdx] = n[idx];
+                        n[idx] = tmp;
+                        l.Add(n.ToString());
+                        p[idx]++;
+                        idx = 1;
+                    }
+                    else
+                    {
+                        p[idx] = 0;
+                        idx++;
+                    }
+                }
+            }
 
             return l;
         }
 
         //Find Combinations of length k
-        public List<string> comb(uint k, uint max = 10000)
+        public List<string> comb(int k, uint max = 10000)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -106,13 +142,13 @@ namespace zperm
             //Find kF
             if (k < facts.Count)
             {
-                kF = facts.ElementAt((int)k);
+                kF = facts[k];
             }
 
             //Find nkF
             if ((str.Length - k) < facts.Count)
             {
-                nkF = facts.ElementAt((int)(str.Length - k));
+                nkF = facts[str.Length - k];
             }
 
             //TODO: Code here
