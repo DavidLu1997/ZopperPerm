@@ -86,15 +86,19 @@ namespace zperm
                 kF = facts[k];
             }
 
+            //Get all combinations (n choose k)
+            List<string> s = comb(k);
+
+            //Generate all permutations for each combination
             //Using Heap's Algorithm
-            //TODO: General implementation to come
-            if (k == str.Length)
+            for (int i = 0; i < s.Count; i++) 
             {
                 List<int> p = new List<int>(new int[k]);
-                char[] n = str.ToCharArray();
+                char[] n = s[i].ToCharArray();
 
-                for(int i = 0; i < p.Count; i++) {
-                    p[i] = 0;
+                for (int j = 0; j < p.Count; j++)
+                {
+                    p[j] = 0;
                 }
 
                 //Add initial string
@@ -151,8 +155,7 @@ namespace zperm
                 nkF = facts[str.Length - k];
             }
 
-            //TODO: Code here
-            //Low priority
+            
 
             return l;
         }
