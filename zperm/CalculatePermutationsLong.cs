@@ -14,18 +14,6 @@ namespace zperm
         //Maximum factorial using ulong
         private const int maxF = 20;
 
-        //Number of total permutations, n!
-        //Only computed once
-        private ulong nF;
-
-        //k!
-        //Only computed once
-        private ulong kF;
-
-        //(n-k)!
-        //Only computed once
-        private ulong nkF;
-
         //Precomputed factorials, up to maxF
         private List<ulong> facts = new List<ulong>() { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200, 1307674368000, 20922789888000, 355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000};
 
@@ -46,20 +34,12 @@ namespace zperm
         CalculatePermutationsLong(string s)
         {
             this.str = s;
-            if (s.Length < facts.Count)
-            {
-                nF = facts[s.Length];
-            }
         }
 
         //Constructor, empty
         CalculatePermutationsLong()
         {
             this.str = "";
-            if (this.str.Length < facts.Count)
-            {
-                nF = facts[str.Length];
-            }
         }
 
         //Set string
@@ -79,12 +59,6 @@ namespace zperm
 
             //Create list
             List<string> l = new List<string>();
-
-            //Calculate kF
-            if (k < facts.Count)
-            {
-                kF = facts[k];
-            }
 
             //Get all combinations (n choose k)
             List<string> s = comb(k);
@@ -132,7 +106,7 @@ namespace zperm
         }
 
         //Find Combinations of length k
-        public List<string> comb(int k, uint max = 10000)
+        public List<string> comb(int k)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -143,22 +117,27 @@ namespace zperm
             //Create list
             List<string> l = new List<string>();
 
-            //Find kF
-            if (k < facts.Count)
-            {
-                kF = facts[k];
-            }
+            //Convert to char array
+            char[] inp = str.ToCharArray();
 
-            //Find nkF
-            if ((str.Length - k) < facts.Count)
-            {
-                nkF = facts[str.Length - k];
-            }
+            //Temp string
+            string temp;
 
-            
+            //Stacks
+            Stack<string> s = new Stack<string>();
+            Stack<int> start = new Stack<int>();
+            Stack<int> end = new Stack<int>();
+            Stack<int> index = new Stack<int>();
+
+            //Initialization
+            s.Push(str);
+            start.Push(0);
+            end.Push(str.Length - 1);
+            index.Push(0);
 
             return l;
         }
+
     }
 
     
