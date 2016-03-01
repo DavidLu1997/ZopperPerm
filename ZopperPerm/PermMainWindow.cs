@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ZopperPerm
 {
-    public partial class Form1 : Form
+    public partial class PermMainWindow : Form
     {
-        public Form1()
+        public PermMainWindow()
         {
             InitializeComponent();
+        }
+
+        private void PermMainWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
