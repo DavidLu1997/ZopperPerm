@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace zperm.Properties
+namespace ZopperPerm.Properties
 {
 
 

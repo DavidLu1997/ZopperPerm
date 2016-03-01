@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace zperm
+namespace ZopperPerm
 {
     public class CalculatePermutationsLong
     {

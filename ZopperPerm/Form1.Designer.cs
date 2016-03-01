@@ -1,4 +1,4 @@
-﻿namespace zperm
+﻿namespace ZopperPerm
 {
     partial class Form1
     {

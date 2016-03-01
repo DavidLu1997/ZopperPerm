@@ -1,4 +1,4 @@
-# ZPerm
+# ZopperPerm
 An efficient permutations generator, supporting unlimited* lengths.
 
 Written in C# and Visual C++.
