@@ -123,6 +123,9 @@ namespace zperm
             //Temp string
             string temp;
 
+            //Temp char array
+            char[] tempA;
+
             //Stacks
             Stack<string> s = new Stack<string>();
             Stack<int> start = new Stack<int>();
@@ -134,6 +137,44 @@ namespace zperm
             start.Push(0);
             end.Push(str.Length - 1);
             index.Push(0);
+
+            int st, en, idx;
+
+            //While we still have more things to do
+            while (s.Count != 0)
+            {
+                if (index.First() == k)
+                {
+                    l.Add(s.First());
+                    index.Pop();
+                    s.Pop();
+                }
+
+                else
+                {
+                    //Pop
+                    st = start.First();
+                    start.Pop();
+                    en = end.First();
+                    end.Pop();
+                    idx = index.First();
+                    index.Pop();
+                    temp = s.First();
+                    s.Pop();
+                    for (int i = st; i <= en && en - i + 1 >= k - idx; i++)
+                    {
+                        //Change character
+                        tempA = temp.ToCharArray();
+                        tempA[idx] = inp[i];
+
+                        //Push
+                        s.Push(tempA.ToString());
+                        start.Push(i + 1);
+                        end.Push(en);
+                        index.Push(idx + 1);
+                    }
+                }
+            }
 
             return l;
         }
