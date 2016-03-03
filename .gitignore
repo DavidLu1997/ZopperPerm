@@ -15,11 +15,13 @@ $RECYCLE.BIN/
 *.msp
 
 # Visual Studio files
-*/bin/Debug/*
-*/bin/Release/*
-*/obj/*
+bin/Debug/*
+bin/Release/*
+obj/*
 *.vsp
 *.psess
+*.pfx
+*.vshost.*
 
 # Windows shortcuts
 *.lnk
