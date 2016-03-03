@@ -36,7 +36,7 @@
             this.combinationButton = new System.Windows.Forms.RadioButton();
             this.kValue = new System.Windows.Forms.NumericUpDown();
             this.mainOutput = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.generateButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.kValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +54,7 @@
             // 
             resources.ApplyResources(this.stringToPermute, "stringToPermute");
             this.stringToPermute.Name = "stringToPermute";
+            this.stringToPermute.TextChanged += new System.EventHandler(this.changeK);
             // 
             // permutationButton
             // 
@@ -79,17 +80,18 @@
             resources.ApplyResources(this.mainOutput, "mainOutput");
             this.mainOutput.Name = "mainOutput";
             // 
-            // button1
+            // generateButton
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.generateButton, "generateButton");
+            this.generateButton.Name = "generateButton";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateAction);
             // 
             // PermMainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.generateButton);
             this.Controls.Add(this.mainOutput);
             this.Controls.Add(this.kValue);
             this.Controls.Add(this.combinationButton);
@@ -116,7 +118,7 @@
         private System.Windows.Forms.RadioButton combinationButton;
         private System.Windows.Forms.NumericUpDown kValue;
         private System.Windows.Forms.RichTextBox mainOutput;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button generateButton;
     }
 }
 

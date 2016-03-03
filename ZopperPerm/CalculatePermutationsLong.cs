@@ -17,6 +17,9 @@ namespace ZopperPerm
         //Precomputed factorials, up to maxF
         private List<ulong> facts = new List<ulong>() { 1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800, 39916800, 479001600, 6227020800, 87178291200, 1307674368000, 20922789888000, 355687428096000, 6402373705728000, 121645100408832000, 2432902008176640000};
 
+        //ProgressBar
+        System.Windows.Forms.ProgressBar p;
+
         //Calculate factorial
         private ulong factorial(int n)
         {
@@ -31,13 +34,13 @@ namespace ZopperPerm
         }
 
         //Constructor, string
-        CalculatePermutationsLong(string s)
+        public CalculatePermutationsLong(string s)
         {
             this.str = s;
         }
 
         //Constructor, empty
-        CalculatePermutationsLong()
+        public CalculatePermutationsLong()
         {
             this.str = "";
         }
@@ -46,6 +49,12 @@ namespace ZopperPerm
         public void setString(string s)
         {
             this.str = s;
+        }
+
+        //Set progress bat
+        public void setProgressBar(System.Windows.Forms.ProgressBar p)
+        {
+            this.p = p;
         }
 
         //Find permutations of length k
@@ -63,20 +72,26 @@ namespace ZopperPerm
             //Get all combinations (n choose k)
             List<string> s = comb(k);
 
+            //Set progressBar
+            p.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k));
+            p.Minimum = 0;
+            p.Value = 0;
+
             //Generate all permutations for each combination
             //Using Heap's Algorithm
             for (int i = 0; i < s.Count; i++) 
             {
-                List<int> p = new List<int>(new int[k]);
+                List<int> q = new List<int>(new int[k]);
                 char[] n = s[i].ToCharArray();
 
-                for (int j = 0; j < p.Count; j++)
+                for (int j = 0; j < q.Count; j++)
                 {
-                    p[j] = 0;
+                    q[j] = 0;
                 }
 
-                //Add initial string
-                l.Add(str);
+                //Add current
+                l.Add(s[i]);
+                p.Value++;
 
                 //Start index and jndex
                 int idx = 1;
@@ -84,24 +99,26 @@ namespace ZopperPerm
                 char tmp;
                 while (idx < k)
                 {
-                    if (p[idx] < idx)
+                    if (q[idx] < idx)
                     {
-                        jdx = idx % 2 * p[idx];
+                        jdx = idx % 2 * q[idx];
                         tmp = n[jdx];
                         n[jdx] = n[idx];
                         n[idx] = tmp;
-                        l.Add(n.ToString());
-                        p[idx]++;
+                        l.Add(new string(n));
+                        p.Value++;
+                        q[idx]++;
                         idx = 1;
                     }
                     else
                     {
-                        p[idx] = 0;
+                        q[idx] = 0;
                         idx++;
                     }
                 }
             }
 
+            p.Value = 0;
             return l;
         }
 
@@ -138,6 +155,11 @@ namespace ZopperPerm
             end.Push(str.Length - 1);
             index.Push(0);
 
+            //Set progressBar
+            p.Maximum = (int)(factorial(str.Length) / (factorial(k) * factorial(str.Length - k)));
+            p.Minimum = 0;
+            p.Value = 0;
+
             int st, en, idx;
 
             //While we still have more things to do
@@ -146,6 +168,7 @@ namespace ZopperPerm
                 if (index.First() == k)
                 {
                     l.Add(s.First());
+                    p.Value++;
                     index.Pop();
                     s.Pop();
                 }
@@ -168,7 +191,7 @@ namespace ZopperPerm
                         tempA[idx] = inp[i];
 
                         //Push
-                        s.Push(tempA.ToString());
+                        s.Push(new string(tempA));
                         start.Push(i + 1);
                         end.Push(en);
                         index.Push(idx + 1);
@@ -176,6 +199,7 @@ namespace ZopperPerm
                 }
             }
 
+            p.Value = 0;
             return l;
         }
 
