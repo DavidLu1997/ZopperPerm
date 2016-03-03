@@ -15,12 +15,9 @@ $RECYCLE.BIN/
 *.msp
 
 # Visual Studio files
-*.sln
-*.suo
 */bin/Debug/*
 */bin/Release/*
 */obj/*
-*.csproj
 *.vsp
 *.psess
 
