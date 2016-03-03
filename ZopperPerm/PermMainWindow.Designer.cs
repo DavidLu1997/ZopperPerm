@@ -29,55 +29,55 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermMainWindow));
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.stringToPermute = new System.Windows.Forms.TextBox();
+            this.permutationButton = new System.Windows.Forms.RadioButton();
+            this.combinationButton = new System.Windows.Forms.RadioButton();
+            this.kValue = new System.Windows.Forms.NumericUpDown();
+            this.mainOutput = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kValue)).BeginInit();
             this.SuspendLayout();
             // 
-            // progressBar1
+            // progressBar
             // 
-            resources.ApplyResources(this.progressBar1, "progressBar1");
-            this.progressBar1.Name = "progressBar1";
+            resources.ApplyResources(this.progressBar, "progressBar");
+            this.progressBar.Name = "progressBar";
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // textBox1
+            // stringToPermute
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
+            resources.ApplyResources(this.stringToPermute, "stringToPermute");
+            this.stringToPermute.Name = "stringToPermute";
             // 
-            // radioButton1
+            // permutationButton
             // 
-            resources.ApplyResources(this.radioButton1, "radioButton1");
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.TabStop = true;
-            this.radioButton1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.permutationButton, "permutationButton");
+            this.permutationButton.Name = "permutationButton";
+            this.permutationButton.TabStop = true;
+            this.permutationButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // combinationButton
             // 
-            resources.ApplyResources(this.radioButton2, "radioButton2");
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.combinationButton, "combinationButton");
+            this.combinationButton.Name = "combinationButton";
+            this.combinationButton.TabStop = true;
+            this.combinationButton.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // kValue
             // 
-            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
-            this.numericUpDown1.Name = "numericUpDown1";
+            resources.ApplyResources(this.kValue, "kValue");
+            this.kValue.Name = "kValue";
             // 
-            // richTextBox1
+            // mainOutput
             // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.Name = "richTextBox1";
+            resources.ApplyResources(this.mainOutput, "mainOutput");
+            this.mainOutput.Name = "mainOutput";
             // 
             // button1
             // 
@@ -90,18 +90,18 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.mainOutput);
+            this.Controls.Add(this.kValue);
+            this.Controls.Add(this.combinationButton);
+            this.Controls.Add(this.permutationButton);
+            this.Controls.Add(this.stringToPermute);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBar);
             this.HelpButton = true;
             this.KeyPreview = true;
             this.Name = "PermMainWindow";
             this.Load += new System.EventHandler(this.PermMainWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,13 +109,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox stringToPermute;
+        private System.Windows.Forms.RadioButton permutationButton;
+        private System.Windows.Forms.RadioButton combinationButton;
+        private System.Windows.Forms.NumericUpDown kValue;
+        private System.Windows.Forms.RichTextBox mainOutput;
         private System.Windows.Forms.Button button1;
     }
 }
