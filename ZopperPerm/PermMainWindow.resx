@@ -170,6 +170,9 @@
   <data name="stringToPermute.Location" type="System.Drawing.Point, System.Drawing">
     <value>81, 12</value>
   </data>
+  <data name="stringToPermute.MaxLength" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
   <data name="stringToPermute.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>

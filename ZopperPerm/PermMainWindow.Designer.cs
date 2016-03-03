@@ -42,8 +42,10 @@
             // 
             // progressBar
             // 
+            this.progressBar.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.progressBar, "progressBar");
             this.progressBar.Name = "progressBar";
+            this.progressBar.Step = 1;
             // 
             // label1
             // 

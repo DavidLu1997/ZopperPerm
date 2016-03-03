@@ -135,7 +135,6 @@ namespace ZopperPerm
             List<string> l = new List<string>();
 
             //Convert to char array
-            str = new string(str.Reverse().ToArray());
             char[] inp = str.ToCharArray();
 
             //Temp string
