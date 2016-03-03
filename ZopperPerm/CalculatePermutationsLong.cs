@@ -135,6 +135,7 @@ namespace ZopperPerm
             List<string> l = new List<string>();
 
             //Convert to char array
+            str = new string(str.Reverse().ToArray());
             char[] inp = str.ToCharArray();
 
             //Temp string
@@ -167,10 +168,12 @@ namespace ZopperPerm
             {
                 if (index.First() == k)
                 {
-                    l.Add(s.First());
+                    l.Add(s.First().Substring(0, k));
                     p.Value++;
                     index.Pop();
                     s.Pop();
+                    start.Pop();
+                    end.Pop();
                 }
 
                 else
