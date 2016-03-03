@@ -9,7 +9,8 @@ Written in C# for .NET 4.5
 
 .NET Framework 4.5 is required for all releases, get it [here](https://www.microsoft.com/en-ca/download/details.aspx?id=30653).
 
-- Latest stable release (1.0.0)
+- [Latest stable release (1.0.0)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.0.0-standalone)
+- [Latest stable release, with installer (1.0.0)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.0.0-installer)
 - [Nightly build](https://github.com/DavidLu1997/ZopperPerm/blob/master/ZopperPerm.exe)
 
 ## Compilation Instructions
