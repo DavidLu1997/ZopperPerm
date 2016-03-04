@@ -18,7 +18,11 @@ Open `ZopperPerm.sln` with Visual Studio 2013, `ctrl-f5` to build and run.
 
 ## Changelog
 
-### 1.0.0
+### v1.1.0
+- Working for n = 11, takes up 7GB of memory though...
+- Changed to 64bit
+- Deleted progress bar
+### v1.0.0
 - Initial release
 - Base functionality complete
 - Working on n > 10
