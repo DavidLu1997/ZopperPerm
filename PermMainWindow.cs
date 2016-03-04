@@ -16,6 +16,7 @@ namespace ZopperPerm
         {
             InitializeComponent();
             permutationButton.Checked = true;
+            progressBar.Visible = false;
         }
 
         private void PermMainWindow_Load(object sender, EventArgs e)
@@ -40,6 +41,7 @@ namespace ZopperPerm
             }
 
             //Otherwise create object to get permutations
+            progressBar.Visible = true;
             CalculatePermutationsLong c = new CalculatePermutationsLong(stringToPermute.Text);
             c.setProgressBar(progressBar);
             if (permutationButton.Checked)
@@ -50,6 +52,7 @@ namespace ZopperPerm
             {
                 mainOutput.Lines = c.comb((int)kValue.Value).ToArray();
             }
+            progressBar.Visible = false;
         }
 
         //Change k bounds
@@ -63,6 +66,11 @@ namespace ZopperPerm
             kValue.Maximum = stringToPermute.Text.Length;
             kValue.Minimum = 0;
             kValue.Value = stringToPermute.Text.Length;
+        }
+
+        private void progressBar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
