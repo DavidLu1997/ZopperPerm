@@ -3,7 +3,7 @@ An efficient permutations/combinations generator, supporting unlimited* lengths.
 
 Written in C# for .NET 4.5
 
-*Limited by system memory, currently limited at 11, working on optimizations
+*Limited by system memory to length 11 strings, working on optimizations, possible batch/parallel generation.
 
 ## Releases
 
