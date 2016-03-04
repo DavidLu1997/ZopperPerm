@@ -9,7 +9,7 @@ Written in C# for .NET 4.5
 
 .NET Framework 4.5 64 bit is required for all releases, get it [here](https://www.microsoft.com/en-ca/download/details.aspx?id=30653).
 
-- [Latest stable release (v1.1.0)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.1.0)
+- [Latest stable release (v1.1.1)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.1.1)
 - [Nightly build](https://github.com/DavidLu1997/ZopperPerm/blob/master/ZopperPerm.exe)
 
 ## Compilation Instructions
@@ -17,6 +17,10 @@ Written in C# for .NET 4.5
 Open `ZopperPerm.sln` with Visual Studio 2013, `ctrl-f5` to build and run.
 
 ## Changelog
+
+### v1.1.1
+- Deleted duplicate entries
+- Added total count
 
 ### v1.1.0
 - Working for n = 11, takes up 7GB of memory though...

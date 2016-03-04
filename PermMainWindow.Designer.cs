@@ -37,6 +37,7 @@
             this.kValue = new System.Windows.Forms.NumericUpDown();
             this.mainOutput = new System.Windows.Forms.RichTextBox();
             this.generateButton = new System.Windows.Forms.Button();
+            this.total = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,10 +91,17 @@
             this.generateButton.UseVisualStyleBackColor = true;
             this.generateButton.Click += new System.EventHandler(this.generateAction);
             // 
+            // total
+            // 
+            resources.ApplyResources(this.total, "total");
+            this.total.Name = "total";
+            // 
             // PermMainWindow
             // 
+            this.AcceptButton = this.generateButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.total);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.mainOutput);
             this.Controls.Add(this.kValue);
@@ -122,6 +130,7 @@
         private System.Windows.Forms.NumericUpDown kValue;
         private System.Windows.Forms.RichTextBox mainOutput;
         private System.Windows.Forms.Button generateButton;
+        private System.Windows.Forms.Label total;
     }
 }
 

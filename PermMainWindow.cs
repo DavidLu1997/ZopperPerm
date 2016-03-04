@@ -46,12 +46,13 @@ namespace ZopperPerm
             c.setProgressBar(progressBar);
             if (permutationButton.Checked)
             {
-                mainOutput.Lines = c.perm((int)kValue.Value).ToArray();
+                mainOutput.Lines = c.perm((int)kValue.Value).Distinct().ToArray();
             }
             else
             {
-                mainOutput.Lines = c.comb((int)kValue.Value).ToArray();
+                mainOutput.Lines = c.comb((int)kValue.Value).Distinct().ToArray();
             }
+            total.Text = "Total: " + mainOutput.Lines.LongLength;
             progressBar.Visible = false;
         }
 
