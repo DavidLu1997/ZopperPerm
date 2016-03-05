@@ -50,13 +50,18 @@ namespace ZopperPerm
             progressBar.Visible = true;
             c.setString(stringToPermute.Text);
             c.setProgressBar(progressBar);
+            string filename = "";
+            if (fileOutput.Checked)
+            {
+                filename = fileName.Text;
+            }
             if (permutationButton.Checked)
             {
-                mainOutput.Lines = c.perm((int)kValue.Value, true).ToArray();
+                mainOutput.Lines = c.perm((int)kValue.Value, filename, true).ToArray();
             }
             else
             {
-                mainOutput.Lines = c.comb((int)kValue.Value, true).ToArray();
+                mainOutput.Lines = c.comb((int)kValue.Value, filename, true).ToArray();
             }
             progressBar.Visible = false;
         }

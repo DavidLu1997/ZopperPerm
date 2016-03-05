@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ZopperPerm
 {
@@ -90,7 +91,7 @@ namespace ZopperPerm
         }
 
         //Find permutations of length k
-        public List<string> perm(int k, bool progress = false)
+        public List<string> perm(int k, string filename = "", bool progress = false)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -100,6 +101,14 @@ namespace ZopperPerm
 
             //Create list
             List<string> l = new List<string>();
+
+            
+            //Create streamWriter
+            StreamWriter w = null;
+            if (filename != "")
+            {
+                w = new StreamWriter(filename);
+            }
 
             //Get all combinations (n choose k)
             List<string> s = comb(k);
@@ -125,7 +134,14 @@ namespace ZopperPerm
                 }
 
                 //Add current
-                l.Add(s[i]);
+                if (w != null)
+                {
+                    w.WriteLine(s[i]);
+                }
+                else
+                {
+                    l.Add(s[i]);
+                }
                 if (progress)
                 {
                     p.Value++;
@@ -143,7 +159,14 @@ namespace ZopperPerm
                         tmp = n[jdx];
                         n[jdx] = n[idx];
                         n[idx] = tmp;
-                        l.Add(new string(n));
+                        if (w != null)
+                        {
+                            w.WriteLine(new string(n));
+                        }
+                        else
+                        {
+                            l.Add(new string(n));
+                        }
                         if (progress)
                         {
                             p.Value++;
@@ -167,12 +190,16 @@ namespace ZopperPerm
             {
                 p.Value = 0;
             }
-
+            //Close and return
+            if (w != null)
+            {
+                w.Close();
+            }
             return l;
         }
 
         //Find Combinations of length k
-        public List<string> comb(int k, bool progress = false)
+        public List<string> comb(int k, string filename = "", bool progress = false)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -182,6 +209,13 @@ namespace ZopperPerm
 
             //Create list
             List<string> l = new List<string>();
+
+            //Create streamWriter
+            StreamWriter w = null;
+            if (filename != "")
+            {
+                w = new StreamWriter(filename);
+            }
 
             //Convert to char array
             char[] inp = str.ToCharArray();
@@ -219,7 +253,14 @@ namespace ZopperPerm
             {
                 if (index.First() == k)
                 {
-                    l.Add(s.First().Substring(0, k));
+                    if (w != null)
+                    {
+                        w.WriteLine(s.First().Substring(0, k));
+                    }
+                    else
+                    {
+                        l.Add(s.First().Substring(0, k));
+                    }
                     if (progress)
                     {
                         p.Value++;
@@ -248,7 +289,14 @@ namespace ZopperPerm
                         tempA[idx] = inp[i];
 
                         //Push
-                        s.Push(new string(tempA));
+                        if (w != null)
+                        {
+                            w.WriteLine(new string(tempA));
+                        }
+                        else
+                        {
+                            l.Add(new string(tempA));
+                        }
                         start.Push(i + 1);
                         end.Push(en);
                         index.Push(idx + 1);
@@ -263,6 +311,10 @@ namespace ZopperPerm
             if (progress)
             {
                 p.Value = 0;
+            }
+            if (w != null)
+            {
+                w.Close();
             }
             return l;
         }

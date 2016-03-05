@@ -22,6 +22,7 @@ obj/*
 *.psess
 *.pfx
 *.vshost.*
+output.txt
 
 # Windows shortcuts
 *.lnk
