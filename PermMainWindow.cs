@@ -28,7 +28,7 @@ namespace ZopperPerm
         }
 
         //Constant for maximum number of displayable factorials
-        private const uint maxDisplayed = 11;
+        private const uint maxDisplayed = 10;
 
         //Generates permutations/combinations
         private void generateAction(object sender, EventArgs e)

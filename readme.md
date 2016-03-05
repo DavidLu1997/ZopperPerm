@@ -9,14 +9,14 @@ Written in C# for .NET 4.5
 - Intel Pentium 4 or equivalent
 - .NET Framework 4.5
 - Windows XP or above
-- 8GB RAM (untested)
+- 2 GB RAM (untested)
 - 1GB HDD
 
 ## Releases
 
 .NET Framework 4.5 64 bit is required for all releases, get it [here](https://www.microsoft.com/en-ca/download/details.aspx?id=30653).
 
-- [Latest stable release (v1.2.0)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.2.0)
+- [Latest stable release (v1.2.1)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.2.1)
 - [Nightly build](https://github.com/DavidLu1997/ZopperPerm/blob/master/ZopperPerm.exe)
 
 ## Compilation Instructions
@@ -24,6 +24,10 @@ Written in C# for .NET 4.5
 Open `ZopperPerm.sln` with Visual Studio 2013, `ctrl-f5` to build and run.
 
 ## Changelog
+
+### v1.2.1
+- Changed to 32 bit compilation
+- Disabled screen output for n = 11
 
 ### v1.2.0
 - Added file output

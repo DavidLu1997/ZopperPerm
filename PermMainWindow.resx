@@ -184,7 +184,7 @@
     <value>6, 6, 6, 6</value>
   </data>
   <data name="stringToPermute.MaxLength" type="System.Int32, mscorlib">
-    <value>20</value>
+    <value>50</value>
   </data>
   <data name="stringToPermute.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 31</value>
