@@ -38,6 +38,8 @@
             this.mainOutput = new System.Windows.Forms.RichTextBox();
             this.generateButton = new System.Windows.Forms.Button();
             this.total = new System.Windows.Forms.Label();
+            this.fileOutput = new System.Windows.Forms.CheckBox();
+            this.fileName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kValue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +49,6 @@
             resources.ApplyResources(this.progressBar, "progressBar");
             this.progressBar.Name = "progressBar";
             this.progressBar.Step = 1;
-            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
             // label1
             // 
@@ -96,11 +97,25 @@
             resources.ApplyResources(this.total, "total");
             this.total.Name = "total";
             // 
+            // fileOutput
+            // 
+            resources.ApplyResources(this.fileOutput, "fileOutput");
+            this.fileOutput.Name = "fileOutput";
+            this.fileOutput.UseVisualStyleBackColor = true;
+            this.fileOutput.CheckedChanged += new System.EventHandler(this.fileOutput_CheckedChanged);
+            // 
+            // fileName
+            // 
+            resources.ApplyResources(this.fileName, "fileName");
+            this.fileName.Name = "fileName";
+            // 
             // PermMainWindow
             // 
             this.AcceptButton = this.generateButton;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.fileName);
+            this.Controls.Add(this.fileOutput);
             this.Controls.Add(this.total);
             this.Controls.Add(this.generateButton);
             this.Controls.Add(this.mainOutput);
@@ -131,6 +146,8 @@
         private System.Windows.Forms.RichTextBox mainOutput;
         private System.Windows.Forms.Button generateButton;
         private System.Windows.Forms.Label total;
+        private System.Windows.Forms.CheckBox fileOutput;
+        private System.Windows.Forms.TextBox fileName;
     }
 }
 

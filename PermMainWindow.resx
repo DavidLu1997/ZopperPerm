@@ -123,10 +123,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 10</value>
+    <value>15, 514</value>
   </data>
   <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 20</value>
+    <value>514, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
@@ -142,7 +142,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,7 +169,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="stringToPermute.Location" type="System.Drawing.Point, System.Drawing">
     <value>81, 12</value>
@@ -193,7 +193,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;stringToPermute.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="permutationButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -220,7 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;permutationButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="combinationButton.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -247,7 +247,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;combinationButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="kValue.Location" type="System.Drawing.Point, System.Drawing">
     <value>196, 12</value>
@@ -268,13 +268,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;kValue.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="mainOutput.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 45</value>
   </data>
   <data name="mainOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>684, 505</value>
+    <value>684, 463</value>
   </data>
   <data name="mainOutput.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -292,16 +292,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;mainOutput.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="generateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="generateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 10</value>
+    <value>584, 514</value>
   </data>
   <data name="generateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="generateButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -319,13 +319,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;generateButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="total.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="total.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 553</value>
+    <value>535, 518</value>
   </data>
   <data name="total.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -346,6 +346,57 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;total.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="fileOutput.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="fileOutput.Location" type="System.Drawing.Point, System.Drawing">
+    <value>440, 14</value>
+  </data>
+  <data name="fileOutput.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 17</value>
+  </data>
+  <data name="fileOutput.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="fileOutput.Text" xml:space="preserve">
+    <value>File Name:</value>
+  </data>
+  <data name="&gt;&gt;fileOutput.Name" xml:space="preserve">
+    <value>fileOutput</value>
+  </data>
+  <data name="&gt;&gt;fileOutput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileOutput.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fileOutput.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="fileName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="fileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>527, 12</value>
+  </data>
+  <data name="fileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="fileName.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;fileName.Name" xml:space="preserve">
+    <value>fileName</value>
+  </data>
+  <data name="&gt;&gt;fileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;fileName.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -361,7 +412,7 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>708, 569</value>
+    <value>708, 540</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ZopperPerm</value>

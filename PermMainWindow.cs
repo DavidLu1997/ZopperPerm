@@ -44,6 +44,7 @@ namespace ZopperPerm
             progressBar.Visible = true;
             CalculatePermutationsLong c = new CalculatePermutationsLong(stringToPermute.Text);
             c.setProgressBar(progressBar);
+
             if (permutationButton.Checked)
             {
                 mainOutput.Lines = c.perm((int)kValue.Value).Distinct().ToArray();
@@ -69,9 +70,12 @@ namespace ZopperPerm
             kValue.Value = stringToPermute.Text.Length;
         }
 
-        private void progressBar_Click(object sender, EventArgs e)
+        private void fileOutput_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (sender == fileOutput)
+            {
+                fileName.Enabled = fileOutput.Checked;
+            }
         }
     }
 }
