@@ -207,7 +207,7 @@ namespace ZopperPerm
             //Set progressBar
             if (progress)
             {
-                p.Maximum = (int)numComb(k) + 50;
+                p.Maximum = (int)(factorial(str.Length) / (factorial(k) * factorial(str.Length - k))) + 50;
                 p.Minimum = 0;
                 p.Value = 0;
             }

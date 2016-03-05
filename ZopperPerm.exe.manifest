@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="ZopperPerm.exe" version="1.1.1.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ZopperPerm" version="1.0.5908.31801" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="ZopperPerm" version="1.0.5908.31894" language="neutral" processorArchitecture="amd64" />
     <commandLine file="ZopperPerm.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,13 +43,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZopperPerm.exe" size="28160">
-      <assemblyIdentity name="ZopperPerm" version="1.0.5908.31801" language="neutral" processorArchitecture="amd64" />
+      <assemblyIdentity name="ZopperPerm" version="1.0.5908.31894" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vSiJxNBw1/6xLqN88b9L5a++yZnTrH8JZECgrCY+aoY=</dsig:DigestValue>
+        <dsig:DigestValue>Cur5Hiev+p40VXzb4F5FR4HjCDovtvj4wpmLBuQb+ho=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
