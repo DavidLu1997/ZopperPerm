@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ZopperPerm.exe.manifest" size="3485">
+    <dependentAssembly dependencyType="install" codebase="ZopperPerm.exe.manifest" size="3487">
       <assemblyIdentity name="ZopperPerm.exe" version="1.1.1.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>reqceJRxe3FZoKLcC1Gc0m9HD6Lg9MJ5lYth8412kGo=</dsig:DigestValue>
+        <dsig:DigestValue>C9C51gHJ3S58GEzhvSpfbHALKSurPaKOFgWoTT6oDXw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
