@@ -5,6 +5,12 @@ Written in C# for .NET 4.5
 
 *Limited by system memory to length 11 strings displayed, unlimited for file output (up to system storage space and processing time)
 
+## Minimum requirements
+- Intel Pentium 4 or equivalent
+- .NET Framework 4.5
+- 8GB RAM (untested)
+- 1GB HDD
+
 ## Releases
 
 .NET Framework 4.5 64 bit is required for all releases, get it [here](https://www.microsoft.com/en-ca/download/details.aspx?id=30653).
