@@ -123,10 +123,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 514</value>
+    <value>30, 988</value>
+  </data>
+  <data name="progressBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 20</value>
+    <value>1186, 38</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
@@ -148,10 +151,13 @@
     <value>True</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 16</value>
+    <value>24, 31</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>131, 25</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -172,13 +178,16 @@
     <value>9</value>
   </data>
   <data name="stringToPermute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 12</value>
+    <value>162, 23</value>
+  </data>
+  <data name="stringToPermute.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="stringToPermute.MaxLength" type="System.Int32, mscorlib">
-    <value>11</value>
+    <value>20</value>
   </data>
   <data name="stringToPermute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>196, 31</value>
   </data>
   <data name="stringToPermute.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -199,10 +208,13 @@
     <value>True</value>
   </data>
   <data name="permutationButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 13</value>
+    <value>508, 25</value>
+  </data>
+  <data name="permutationButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="permutationButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 17</value>
+    <value>169, 29</value>
   </data>
   <data name="permutationButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -226,10 +238,13 @@
     <value>True</value>
   </data>
   <data name="combinationButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>346, 13</value>
+    <value>692, 25</value>
+  </data>
+  <data name="combinationButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="combinationButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
+    <value>174, 29</value>
   </data>
   <data name="combinationButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -250,10 +265,13 @@
     <value>6</value>
   </data>
   <data name="kValue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>196, 12</value>
+    <value>392, 23</value>
+  </data>
+  <data name="kValue.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="kValue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 20</value>
+    <value>68, 31</value>
   </data>
   <data name="kValue.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -271,10 +289,13 @@
     <value>5</value>
   </data>
   <data name="mainOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 45</value>
+    <value>26, 87</value>
+  </data>
+  <data name="mainOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="mainOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>684, 463</value>
+    <value>1426, 887</value>
   </data>
   <data name="mainOutput.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -298,10 +319,13 @@
     <value>NoControl</value>
   </data>
   <data name="generateButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 514</value>
+    <value>1228, 988</value>
+  </data>
+  <data name="generateButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="generateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
+    <value>224, 42</value>
   </data>
   <data name="generateButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -325,10 +349,13 @@
     <value>True</value>
   </data>
   <data name="total.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 518</value>
+    <value>866, 29</value>
+  </data>
+  <data name="total.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 0, 6, 0</value>
   </data>
   <data name="total.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>84, 25</value>
   </data>
   <data name="total.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -352,10 +379,13 @@
     <value>True</value>
   </data>
   <data name="fileOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>440, 14</value>
+    <value>1112, 27</value>
+  </data>
+  <data name="fileOutput.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="fileOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>147, 29</value>
   </data>
   <data name="fileOutput.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -375,17 +405,23 @@
   <data name="&gt;&gt;fileOutput.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="fileName.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="fileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>527, 12</value>
+    <value>1256, 24</value>
+  </data>
+  <data name="fileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="fileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+    <value>196, 31</value>
   </data>
   <data name="fileName.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
+  </data>
+  <data name="fileName.Text" xml:space="preserve">
+    <value>output.txt</value>
+  </data>
+  <data name="fileName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;fileName.Name" xml:space="preserve">
     <value>fileName</value>
@@ -403,7 +439,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>12, 25</value>
   </data>
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -412,7 +448,10 @@
     <value>True</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>708, 540</value>
+    <value>1470, 1038</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ZopperPerm</value>

@@ -67,6 +67,7 @@
             this.permutationButton.Name = "permutationButton";
             this.permutationButton.TabStop = true;
             this.permutationButton.UseVisualStyleBackColor = true;
+            this.permutationButton.Click += new System.EventHandler(this.updateRadioButtons);
             // 
             // combinationButton
             // 
@@ -74,11 +75,13 @@
             this.combinationButton.Name = "combinationButton";
             this.combinationButton.TabStop = true;
             this.combinationButton.UseVisualStyleBackColor = true;
+            this.combinationButton.Click += new System.EventHandler(this.updateRadioButtons);
             // 
             // kValue
             // 
             resources.ApplyResources(this.kValue, "kValue");
             this.kValue.Name = "kValue";
+            this.kValue.ValueChanged += new System.EventHandler(this.changeKValue);
             // 
             // mainOutput
             // 

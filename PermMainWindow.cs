@@ -12,17 +12,23 @@ namespace ZopperPerm
 {
     public partial class PermMainWindow : Form
     {
+        //Permutations calculator
+        private CalculatePermutationsLong c;
         public PermMainWindow()
         {
             InitializeComponent();
             permutationButton.Checked = true;
             progressBar.Visible = false;
+            c = new CalculatePermutationsLong();
         }
 
         private void PermMainWindow_Load(object sender, EventArgs e)
         {
 
         }
+
+        //Constant for maximum number of displayable factorials
+        private const uint maxDisplayed = 11;
 
         //Generates permutations/combinations
         private void generateAction(object sender, EventArgs e)
@@ -42,18 +48,16 @@ namespace ZopperPerm
 
             //Otherwise create object to get permutations
             progressBar.Visible = true;
-            CalculatePermutationsLong c = new CalculatePermutationsLong(stringToPermute.Text);
+            c.setString(stringToPermute.Text);
             c.setProgressBar(progressBar);
-
             if (permutationButton.Checked)
             {
-                mainOutput.Lines = c.perm((int)kValue.Value).Distinct().ToArray();
+                mainOutput.Lines = c.perm((int)kValue.Value, true).ToArray();
             }
             else
             {
-                mainOutput.Lines = c.comb((int)kValue.Value).Distinct().ToArray();
+                mainOutput.Lines = c.comb((int)kValue.Value, true).ToArray();
             }
-            total.Text = "Total: " + mainOutput.Lines.LongLength;
             progressBar.Visible = false;
         }
 
@@ -68,14 +72,54 @@ namespace ZopperPerm
             kValue.Maximum = stringToPermute.Text.Length;
             kValue.Minimum = 0;
             kValue.Value = stringToPermute.Text.Length;
+
+            //Mandatory file output if not displayable
+            if (stringToPermute.Text.Length > maxDisplayed)
+            {
+                fileOutput.Checked = true;
+                fileOutput.Enabled = false;
+            }
+            //Otherwise don't touch it, and enable it
+            else
+            {
+                fileOutput.Enabled = true;
+            }
+            updateTotal();
         }
 
+        private void updateTotal()
+        {
+            //Find Total number of output lines
+            c.setString(stringToPermute.Text);
+            if (permutationButton.Checked)
+            {
+                total.Text = "Total: " + c.numPerm((int)kValue.Value).ToString();
+            }
+            else
+            {
+                total.Text = "Total: " + c.numComb((int)kValue.Value).ToString();
+            }
+        }
+
+        //Enable file output
         private void fileOutput_CheckedChanged(object sender, EventArgs e)
         {
             if (sender == fileOutput)
             {
-                fileName.Enabled = fileOutput.Checked;
+                fileName.Visible= fileOutput.Checked;
             }
+        }
+
+        //Update total
+        private void changeKValue(object sender, EventArgs e)
+        {
+            updateTotal();
+        }
+
+        //Update total
+        private void updateRadioButtons(object sender, EventArgs e)
+        {
+            updateTotal();
         }
     }
 }

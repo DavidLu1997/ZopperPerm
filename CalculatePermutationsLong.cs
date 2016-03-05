@@ -51,14 +51,46 @@ namespace ZopperPerm
             this.str = s;
         }
 
-        //Set progress bat
+        //Set progress bar
         public void setProgressBar(System.Windows.Forms.ProgressBar p)
         {
             this.p = p;
         }
 
+        //Get number of output lines for permutations
+        public ulong numPerm(int k)
+        {
+            if (str.Length == 0)
+                return 0;
+
+            //Get raw number
+            ulong num = factorial(str.Length) / factorial(str.Length - k);
+
+            //Get repeats
+            foreach (char v in str.ToList().Distinct())
+            {
+                num /= (ulong)str.ToList().Count(val => val == v);
+            }
+
+            return num;
+        }
+
+        //Get number of output lines for combinations
+        public ulong numComb(int k)
+        {
+            if (str.Length == 0)
+                return 0;
+
+            //As combinations are actually really small
+            //Several order of magnitudes smaller
+            //And finding out how to deal with repetitions is hard
+            //We just calculate it
+
+            return (ulong)comb(k).Count();
+        }
+
         //Find permutations of length k
-        public List<string> perm(int k, int max = 10000)
+        public List<string> perm(int k, bool progress = false)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -73,9 +105,12 @@ namespace ZopperPerm
             List<string> s = comb(k);
 
             //Set progressBar
-            p.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k));
-            p.Minimum = 0;
-            p.Value = 0;
+            if (progress)
+            {
+                p.Maximum = (int)numPerm(k) + 50;
+                p.Minimum = 0;
+                p.Value = 0;
+            }
 
             //Generate all permutations for each combination
             //Using Heap's Algorithm
@@ -91,7 +126,10 @@ namespace ZopperPerm
 
                 //Add current
                 l.Add(s[i]);
-                p.Value++;
+                if (progress)
+                {
+                    p.Value++;
+                }
 
                 //Start index and jndex
                 int idx = 1;
@@ -106,7 +144,10 @@ namespace ZopperPerm
                         n[jdx] = n[idx];
                         n[idx] = tmp;
                         l.Add(new string(n));
-                        p.Value++;
+                        if (progress)
+                        {
+                            p.Value++;
+                        }
                         q[idx]++;
                         idx = 1;
                     }
@@ -118,12 +159,20 @@ namespace ZopperPerm
                 }
             }
 
-            p.Value = 0;
+            //Sort
+            l = l.Distinct().ToList();
+            l.Sort();
+
+            if (progress)
+            {
+                p.Value = 0;
+            }
+
             return l;
         }
 
         //Find Combinations of length k
-        public List<string> comb(int k)
+        public List<string> comb(int k, bool progress = false)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -156,9 +205,12 @@ namespace ZopperPerm
             index.Push(0);
 
             //Set progressBar
-            p.Maximum = (int)(factorial(str.Length) / (factorial(k) * factorial(str.Length - k)));
-            p.Minimum = 0;
-            p.Value = 0;
+            if (progress)
+            {
+                p.Maximum = (int)numComb(k) + 50;
+                p.Minimum = 0;
+                p.Value = 0;
+            }
 
             int st, en, idx;
 
@@ -168,7 +220,10 @@ namespace ZopperPerm
                 if (index.First() == k)
                 {
                     l.Add(s.First().Substring(0, k));
-                    p.Value++;
+                    if (progress)
+                    {
+                        p.Value++;
+                    }
                     index.Pop();
                     s.Pop();
                     start.Pop();
@@ -201,7 +256,14 @@ namespace ZopperPerm
                 }
             }
 
-            p.Value = 0;
+            //Sort
+            l = l.Distinct().ToList();
+            l.Sort();
+
+            if (progress)
+            {
+                p.Value = 0;
+            }
             return l;
         }
 
