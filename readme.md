@@ -25,6 +25,11 @@ Open `ZopperPerm.sln` with Visual Studio 2013, `ctrl-f5` to build and run.
 
 ## Changelog
 
+### v1.3.0 (Future)
+- Implemented regular expressions ([] operator)
+- Implemented multithreading
+- Refactored
+
 ### v1.2.1
 - Changed to 32 bit compilation
 - Disabled screen output for n = 11

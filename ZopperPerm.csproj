@@ -76,15 +76,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CalculatePermutationsLong.cs" />
+    <Compile Include="CalculatePermutations.cs" />
+    <Compile Include="Combinations.cs" />
+    <Compile Include="Factorial.cs" />
     <Compile Include="PermMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PermMainWindow.Designer.cs">
       <DependentUpon>PermMainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Permutations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Singleton.cs" />
     <EmbeddedResource Include="PermMainWindow.resx">
       <DependentUpon>PermMainWindow.cs</DependentUpon>
     </EmbeddedResource>

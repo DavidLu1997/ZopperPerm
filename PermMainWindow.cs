@@ -13,13 +13,13 @@ namespace ZopperPerm
     public partial class PermMainWindow : Form
     {
         //Permutations calculator
-        private CalculatePermutationsLong c;
+        private CalculatePermutations c;
         public PermMainWindow()
         {
             InitializeComponent();
             permutationButton.Checked = true;
             progressBar.Visible = false;
-            c = new CalculatePermutationsLong();
+            c = CalculatePermutations.Instance;
         }
 
         private void PermMainWindow_Load(object sender, EventArgs e)
