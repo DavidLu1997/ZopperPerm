@@ -28,7 +28,7 @@ namespace ZopperPerm
         }
 
         //Find permutations of length k
-        public List<string> perm(int k, string filename = "", bool progress = false)
+        public List<string> perm(int k)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
@@ -39,23 +39,15 @@ namespace ZopperPerm
             //Create list
             List<string> l = new List<string>();
 
-
-            //Create streamWriter
-            StreamWriter w = null;
-            if (filename != "")
-            {
-                w = new StreamWriter(filename);
-            }
-
             //Get all combinations (n choose k)
             List<string> s = comb(k);
 
             //Set progressBar
-            if (progress)
+            if (progress != null)
             {
-                p.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k)) + 50;
-                p.Minimum = 0;
-                p.Value = 0;
+                progress.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k)) + 50;
+                progress.Minimum = 0;
+                progress.Value = 0;
             }
 
             //Generate all permutations for each combination
@@ -71,17 +63,17 @@ namespace ZopperPerm
                 }
 
                 //Add current
-                if (w != null)
+                if (writer != null)
                 {
-                    w.WriteLine(s[i]);
+                    writer.WriteLine(s[i]);
                 }
                 else
                 {
                     l.Add(s[i]);
                 }
-                if (progress)
+                if (progress != null)
                 {
-                    p.Value++;
+                    progress.Value++;
                 }
 
                 //Start index and jndex
@@ -96,17 +88,17 @@ namespace ZopperPerm
                         tmp = n[jdx];
                         n[jdx] = n[idx];
                         n[idx] = tmp;
-                        if (w != null)
+                        if (writer != null)
                         {
-                            w.WriteLine(new string(n));
+                            writer.WriteLine(new string(n));
                         }
                         else
                         {
                             l.Add(new string(n));
                         }
-                        if (progress)
+                        if (progress != null)
                         {
-                            p.Value++;
+                            progress.Value++;
                         }
                         q[idx]++;
                         idx = 1;
@@ -123,14 +115,14 @@ namespace ZopperPerm
             l = l.Distinct().ToList();
             l.Sort();
 
-            if (progress)
+            if (progress != null)
             {
-                p.Value = 0;
+                progress.Value = 0;
             }
             //Close and return
-            if (w != null)
+            if (writer != null)
             {
-                w.Close();
+                writer.Close();
             }
             return l;
         }

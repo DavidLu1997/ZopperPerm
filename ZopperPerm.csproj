@@ -79,6 +79,7 @@
     <Compile Include="CalculatePermutations.cs" />
     <Compile Include="Combinations.cs" />
     <Compile Include="Factorial.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="PermMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

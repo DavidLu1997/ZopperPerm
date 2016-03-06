@@ -12,6 +12,13 @@ namespace ZopperPerm
 {
     public partial class PermMainWindow : Form
     {
+        //Total number of permutations
+        private ulong totalCount;
+
+        //Maximum displayable lines
+        //Currently 100 000
+        private const int maxDisplayed = 100000;
+
         //Permutations calculator
         private CalculatePermutations c;
         public PermMainWindow()
@@ -19,6 +26,7 @@ namespace ZopperPerm
             InitializeComponent();
             permutationButton.Checked = true;
             progressBar.Visible = false;
+            totalCount = 0;
             c = CalculatePermutations.Instance;
         }
 
@@ -26,9 +34,6 @@ namespace ZopperPerm
         {
 
         }
-
-        //Constant for maximum number of displayable factorials
-        private const uint maxDisplayed = 10;
 
         //Generates permutations/combinations
         private void generateAction(object sender, EventArgs e)
@@ -55,13 +60,14 @@ namespace ZopperPerm
             {
                 filename = fileName.Text;
             }
+            c.setStreamWriter(filename);
             if (permutationButton.Checked)
             {
-                mainOutput.Lines = c.perm((int)kValue.Value, filename, true).ToArray();
+                mainOutput.Lines = c.perm((int)kValue.Value).ToArray();
             }
             else
             {
-                mainOutput.Lines = c.comb((int)kValue.Value, filename, true).ToArray();
+                mainOutput.Lines = c.comb((int)kValue.Value).ToArray();
             }
             progressBar.Visible = false;
         }
@@ -79,7 +85,7 @@ namespace ZopperPerm
             kValue.Value = stringToPermute.Text.Length;
 
             //Mandatory file output if not displayable
-            if (stringToPermute.Text.Length > maxDisplayed)
+            if (totalCount > maxDisplayed)
             {
                 fileOutput.Checked = true;
                 fileOutput.Enabled = false;
@@ -92,6 +98,7 @@ namespace ZopperPerm
             updateTotal();
         }
 
+        //Update displayed total
         private void updateTotal()
         {
             //Find Total number of output lines

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace ZopperPerm
 {
@@ -13,7 +14,10 @@ namespace ZopperPerm
         private string str;
         
         //ProgressBar
-        System.Windows.Forms.ProgressBar p;
+        ProgressBar progress;
+
+        //StreamWriter
+        StreamWriter writer;
 
         //Set string
         public void setString(string s)
@@ -24,7 +28,20 @@ namespace ZopperPerm
         //Set progress bar
         public void setProgressBar(System.Windows.Forms.ProgressBar p)
         {
-            this.p = p;
+            this.progress = p;
+        }
+
+        //Set StreamWriter
+        public void setStreamWriter(string filename)
+        {
+            if (filename != "")
+            {
+                this.writer = new StreamWriter(filename);
+            }
+            else
+            {
+                this.writer = null;
+            }
         }
     }
 }
