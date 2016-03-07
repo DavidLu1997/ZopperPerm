@@ -9,9 +9,19 @@ namespace ZopperPerm
     public partial class CalculatePermutations
     {
         //Initialize output
-        private void initOutput()
+        private void initOutput(int k)
         {
-            
+            if (writer == null)
+            {
+                l = new List<string>();
+            }
+            if (progress != null)
+            {
+                //TODO: Change
+                progress.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k));
+                progress.Minimum = 0;
+                progress.Value = 0;
+            }
         }
 
         //Process output to correct form
@@ -48,6 +58,15 @@ namespace ZopperPerm
             {
                 writer.Close();
             }
+        }
+
+        //Get l
+        public List<string> getOutput()
+        {
+            if (l != null)
+                return l;
+            else
+                return null;
         }
     }
 }

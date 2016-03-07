@@ -63,11 +63,15 @@ namespace ZopperPerm
             c.setStreamWriter(filename);
             if (permutationButton.Checked)
             {
-                mainOutput.Lines = c.perm((int)kValue.Value).ToArray();
+                c.perm((int)kValue.Value);
             }
             else
             {
-                mainOutput.Lines = c.comb((int)kValue.Value).ToArray();
+                c.comb((int)kValue.Value);
+            }
+            if (!fileOutput.Checked)
+            {
+                mainOutput.Lines = c.getOutput().ToArray();
             }
             progressBar.Visible = false;
         }

@@ -19,19 +19,20 @@ namespace ZopperPerm
             //Several order of magnitudes smaller
             //And finding out how to deal with repetitions is hard
             //We just calculate it
-
-            return (ulong)comb(k).Count();
+            comb(k);
+            return (ulong)l.Count(); ;
         }
 
 
 
         //Find Combinations of length k
-        public List<string> comb(int k)
+        public void comb(int k)
         {
+            initOutput(k);
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
             {
-                return null;
+                return;
             }
 
             //Convert to char array
@@ -55,14 +56,6 @@ namespace ZopperPerm
             end.Push(str.Length - 1);
             index.Push(0);
 
-            //Set progressBar
-            if (progress != null)
-            {
-                progress.Maximum = (int)(factorial(str.Length) / (factorial(k) * factorial(str.Length - k))) + 50;
-                progress.Minimum = 0;
-                progress.Value = 0;
-            }
-
             int st, en, idx;
 
             //While we still have more things to do
@@ -70,18 +63,7 @@ namespace ZopperPerm
             {
                 if (index.First() == k)
                 {
-                    if (writer != null)
-                    {
-                        writer.WriteLine(s.First().Substring(0, k));
-                    }
-                    else
-                    {
-                        l.Add(s.First().Substring(0, k));
-                    }
-                    if (progress != null)
-                    {
-                        progress.Value++;
-                    }
+                    processOutput(s.First().Substring(0, k));
                     index.Pop();
                     s.Pop();
                     start.Pop();
@@ -105,15 +87,7 @@ namespace ZopperPerm
                         tempA = temp.ToCharArray();
                         tempA[idx] = inp[i];
 
-                        //Push
-                        if (writer != null)
-                        {
-                            writer.WriteLine(new string(tempA));
-                        }
-                        else
-                        {
-                            l.Add(new string(tempA));
-                        }
+                        s.Push(new string(tempA));
                         start.Push(i + 1);
                         end.Push(en);
                         index.Push(idx + 1);
@@ -121,19 +95,7 @@ namespace ZopperPerm
                 }
             }
 
-            //Sort
-            l = l.Distinct().ToList();
-            l.Sort();
-
-            if (progress != null)
-            {
-                progress.Value = 0;
-            }
-            if (writer != null)
-            {
-                writer.Close();
-            }
-            return l;
+            finishOutput();
         }
     }
 }

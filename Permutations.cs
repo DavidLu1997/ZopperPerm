@@ -28,24 +28,19 @@ namespace ZopperPerm
         }
 
         //Find permutations of length k
-        public List<string> perm(int k)
+        public void perm(int k)
         {
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
             {
-                return null;
+                return;
             }
 
             //Get all combinations (n choose k)
-            List<string> s = comb(k);
+            comb(k);
+            List<string> s = l;
 
-            //Set progressBar
-            if (progress != null)
-            {
-                progress.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k)) + 50;
-                progress.Minimum = 0;
-                progress.Value = 0;
-            }
+            initOutput(k);
 
             //Generate all permutations for each combination
             //Using Heap's Algorithm
