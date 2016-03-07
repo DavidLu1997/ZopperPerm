@@ -16,7 +16,7 @@ Written in C# for .NET 4.5
 
 .NET Framework 4.5 64 bit is required for all releases, get it [here](https://www.microsoft.com/en-ca/download/details.aspx?id=30653).
 
-- [Latest stable release (v1.2.0)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.2.0)
+- [Latest stable release (v1.2.2)](https://github.com/DavidLu1997/ZopperPerm/releases/tag/v1.2.2)
 - [Nightly build](https://github.com/DavidLu1997/ZopperPerm/blob/master/ZopperPerm.exe)
 
 ## Compilation Instructions
