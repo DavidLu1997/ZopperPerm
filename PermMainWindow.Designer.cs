@@ -59,7 +59,6 @@
             // 
             resources.ApplyResources(this.stringToPermute, "stringToPermute");
             this.stringToPermute.Name = "stringToPermute";
-            this.stringToPermute.ShortcutsEnabled = false;
             this.stringToPermute.TextChanged += new System.EventHandler(this.changeK);
             // 
             // permutationButton
@@ -82,11 +81,6 @@
             // 
             resources.ApplyResources(this.kValue, "kValue");
             this.kValue.Name = "kValue";
-            this.kValue.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.kValue.ValueChanged += new System.EventHandler(this.changeKValue);
             // 
             // mainOutput
