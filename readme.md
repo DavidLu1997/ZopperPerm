@@ -30,6 +30,10 @@ Open `ZopperPerm.sln` with Visual Studio 2013, `ctrl-f5` to build and run.
 - Implemented multithreading
 - Refactored
 
+### v1.2.2
+- Fixed file output bugs
+- Known issue: File output does not check for distinct values
+
 ### v1.2.1
 - Changed to 32 bit compilation
 - Disabled screen output for n = 11
