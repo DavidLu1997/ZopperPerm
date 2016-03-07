@@ -19,6 +19,9 @@ namespace ZopperPerm
         //StreamWriter
         StreamWriter writer;
 
+        //File path
+        string filename;
+
         //Output list
         List<string> l;
 
@@ -37,14 +40,7 @@ namespace ZopperPerm
         //Set StreamWriter
         public void setStreamWriter(string filename)
         {
-            if (filename != "")
-            {
-                this.writer = new StreamWriter(filename);
-            }
-            else
-            {
-                this.writer = null;
-            }
+            this.filename = filename;
         }
     }
 }

@@ -51,6 +51,9 @@ namespace ZopperPerm
                 return;
             }
 
+            //Clear display
+            mainOutput.Clear();
+
             //Otherwise create object to get permutations
             progressBar.Visible = true;
             c.setString(stringToPermute.Text);
@@ -87,18 +90,6 @@ namespace ZopperPerm
             kValue.Maximum = stringToPermute.Text.Length;
             kValue.Minimum = 0;
             kValue.Value = stringToPermute.Text.Length;
-
-            //Mandatory file output if not displayable
-            if (totalCount > maxDisplayed)
-            {
-                fileOutput.Checked = true;
-                fileOutput.Enabled = false;
-            }
-            //Otherwise don't touch it, and enable it
-            else
-            {
-                fileOutput.Enabled = true;
-            }
             updateTotal();
         }
 
@@ -109,11 +100,25 @@ namespace ZopperPerm
             c.setString(stringToPermute.Text);
             if (permutationButton.Checked)
             {
-                total.Text = "Total: " + c.numPerm((int)kValue.Value).ToString();
+                totalCount = c.numPerm((int)kValue.Value);
             }
             else
             {
-                total.Text = "Total: " + c.numComb((int)kValue.Value).ToString();
+                totalCount = c.numComb((int)kValue.Value);
+            }
+            total.Text = "Total: " + totalCount.ToString();
+
+            //Mandatory file output if not displayable
+            if (totalCount > maxDisplayed)
+            {
+                fileOutput.Checked = true;
+                fileOutput.Enabled = false;
+            }
+            //Otherwise uncheck it
+            else
+            {
+                fileOutput.Enabled = true;
+                fileOutput.Checked = false;
             }
         }
 
@@ -122,7 +127,16 @@ namespace ZopperPerm
         {
             if (sender == fileOutput)
             {
-                fileName.Visible= fileOutput.Checked;
+                fileName.Visible = fileOutput.Checked;
+            }
+
+            if (fileOutput.Checked)
+            {
+                c.setStreamWriter(fileName.Text);
+            }
+            else
+            {
+                c.setStreamWriter("");
             }
         }
 
@@ -136,6 +150,19 @@ namespace ZopperPerm
         private void updateRadioButtons(object sender, EventArgs e)
         {
             updateTotal();
+        }
+
+        //Change file name
+        private void fileName_TextChanged(object sender, EventArgs e)
+        {
+            if (fileOutput.Checked)
+            {
+                c.setStreamWriter(fileName.Text);
+            }
+            else
+            {
+                c.setStreamWriter("");
+            }
         }
     }
 }

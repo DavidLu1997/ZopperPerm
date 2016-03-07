@@ -111,6 +111,7 @@
             // 
             resources.ApplyResources(this.fileName, "fileName");
             this.fileName.Name = "fileName";
+            this.fileName.TextChanged += new System.EventHandler(this.fileName_TextChanged);
             // 
             // PermMainWindow
             // 

@@ -37,9 +37,11 @@ namespace ZopperPerm
             }
 
             //Get all combinations (n choose k)
+            string temp = filename;
+            setStreamWriter("");
             comb(k);
             List<string> s = l;
-
+            setStreamWriter(temp);
             initOutput(k);
 
             //Generate all permutations for each combination

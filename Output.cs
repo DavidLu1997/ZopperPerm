@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ZopperPerm
 {
@@ -11,9 +12,13 @@ namespace ZopperPerm
         //Initialize output
         private void initOutput(int k)
         {
-            if (writer == null)
+            if (filename == "" || filename == null)
             {
                 l = new List<string>();
+            }
+            else
+            {
+                writer = new StreamWriter(filename);
             }
             if (progress != null)
             {
@@ -44,9 +49,12 @@ namespace ZopperPerm
         //Finalize output
         private void finishOutput()
         {
-            //Sort
-            l = l.Distinct().ToList();
-            l.Sort();
+            //Sort if writer is null
+            if (writer == null)
+            {
+                l = l.Distinct().ToList();
+                l.Sort();
+            }
 
             //If progress bar
             if (progress != null)
@@ -57,6 +65,8 @@ namespace ZopperPerm
             if (writer != null)
             {
                 writer.Close();
+                writer.Dispose();
+                writer = null;
             }
         }
 
