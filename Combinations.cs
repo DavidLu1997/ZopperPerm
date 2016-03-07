@@ -34,9 +34,6 @@ namespace ZopperPerm
                 return null;
             }
 
-            //Create list
-            List<string> l = new List<string>();
-
             //Convert to char array
             char[] inp = str.ToCharArray();
 

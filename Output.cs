@@ -14,10 +14,40 @@ namespace ZopperPerm
             
         }
 
-        //Process output to correct place
+        //Process output to correct form
         private void processOutput(string s)
         {
+            if (writer != null)
+            {
+                writer.WriteLine(s);
+            }
+            else
+            {
+                l.Add(s);
+            }
+            if (progress != null)
+            {
+                progress.Value++;
+            }
+        }
 
+        //Finalize output
+        private void finishOutput()
+        {
+            //Sort
+            l = l.Distinct().ToList();
+            l.Sort();
+
+            //If progress bar
+            if (progress != null)
+            {
+                progress.Value = 0;
+            }
+            //Close and return
+            if (writer != null)
+            {
+                writer.Close();
+            }
         }
     }
 }

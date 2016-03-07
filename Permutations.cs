@@ -36,9 +36,6 @@ namespace ZopperPerm
                 return null;
             }
 
-            //Create list
-            List<string> l = new List<string>();
-
             //Get all combinations (n choose k)
             List<string> s = comb(k);
 
@@ -63,18 +60,7 @@ namespace ZopperPerm
                 }
 
                 //Add current
-                if (writer != null)
-                {
-                    writer.WriteLine(s[i]);
-                }
-                else
-                {
-                    l.Add(s[i]);
-                }
-                if (progress != null)
-                {
-                    progress.Value++;
-                }
+                processOutput(s[i]);
 
                 //Start index and jndex
                 int idx = 1;
@@ -88,18 +74,7 @@ namespace ZopperPerm
                         tmp = n[jdx];
                         n[jdx] = n[idx];
                         n[idx] = tmp;
-                        if (writer != null)
-                        {
-                            writer.WriteLine(new string(n));
-                        }
-                        else
-                        {
-                            l.Add(new string(n));
-                        }
-                        if (progress != null)
-                        {
-                            progress.Value++;
-                        }
+                        processOutput(new string(n));
                         q[idx]++;
                         idx = 1;
                     }
@@ -111,20 +86,7 @@ namespace ZopperPerm
                 }
             }
 
-            //Sort
-            l = l.Distinct().ToList();
-            l.Sort();
-
-            if (progress != null)
-            {
-                progress.Value = 0;
-            }
-            //Close and return
-            if (writer != null)
-            {
-                writer.Close();
-            }
-            return l;
+            finishOutput();
         }
     }
 }

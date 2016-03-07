@@ -19,6 +19,9 @@ namespace ZopperPerm
         //StreamWriter
         StreamWriter writer;
 
+        //Output list
+        List<string> l;
+
         //Set string
         public void setString(string s)
         {

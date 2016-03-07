@@ -17,6 +17,7 @@ namespace ZopperPerm
             this.str = "";
             progress = null;
             writer = null;
+            l = null;
         }
 
         public static CalculatePermutations Instance
