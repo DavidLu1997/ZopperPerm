@@ -164,11 +164,5 @@ namespace ZopperPerm
                 c.setStreamWriter("");
             }
         }
-
-        //Close program
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
