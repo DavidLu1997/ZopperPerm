@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ZopperPerm.exe" version="1.2.1.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ZopperPerm.exe" version="1.2.2.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ZopperPerm" version="1.0.5912.17768" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ZopperPerm" version="1.0.5912.17888" language="neutral" processorArchitecture="msil" />
     <commandLine file="ZopperPerm.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -42,17 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZopperPerm.exe" size="33280">
-      <assemblyIdentity name="ZopperPerm" version="1.0.5912.17768" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZopperPerm.exe" size="233984">
+      <assemblyIdentity name="ZopperPerm" version="1.0.5912.17888" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8NpurLaK2sryQyuOcAlnMVU/k8RhJvoe2WQYZZqel/Q=</dsig:DigestValue>
+        <dsig:DigestValue>5rlJj6g/6/FoQUcm4YffiDeYn92ueqbnNU4UQCiP6Aw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="favicon.ico" size="99678">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>M/TUPnf0vQiv51QwwtKE2dfMjl/HUrWXV6aRGOsxt8U=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="ZopperPerm.exe.config" size="187">
     <hash>
       <dsig:Transforms>
