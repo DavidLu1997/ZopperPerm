@@ -4,7 +4,7 @@
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ZopperPerm" version="1.0.5912.17888" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ZopperPerm" version="1.0.5912.23531" language="neutral" processorArchitecture="msil" />
     <commandLine file="ZopperPerm.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZopperPerm.exe" size="233984">
-      <assemblyIdentity name="ZopperPerm" version="1.0.5912.17888" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ZopperPerm.exe" size="239104">
+      <assemblyIdentity name="ZopperPerm" version="1.0.5912.23531" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5rlJj6g/6/FoQUcm4YffiDeYn92ueqbnNU4UQCiP6Aw=</dsig:DigestValue>
+        <dsig:DigestValue>UUJPEVmiOxtW/Y5SSNf8s2kxJXHBz+YpG8IGNfjE1HE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
