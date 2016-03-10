@@ -25,10 +25,15 @@ Open `ZopperPerm.sln` with Visual Studio 2013, `ctrl-f5` to build and run.
 
 ## Changelog
 
-### v1.3.0 (Future)
+### v1.4.0 (Future)
 - Implemented regular expressions ([] operator)
 - Implemented multithreading
 - Refactored
+
+### v1.3.0
+- Implemented streamlined UI
+- Enforced file output
+- Refactored for web deployment
 
 ### v1.2.2
 - Fixed file output bugs
