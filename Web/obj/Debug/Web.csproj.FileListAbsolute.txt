@@ -1,5 +1,5 @@
 D:\Projects\ZopperPerm\Web\bin\Web.dll.config
 D:\Projects\ZopperPerm\Web\bin\Web.dll
 D:\Projects\ZopperPerm\Web\bin\Web.pdb
-D:\Projects\ZopperPerm\Web\obj\Release\Web.dll
-D:\Projects\ZopperPerm\Web\obj\Release\Web.pdb
+D:\Projects\ZopperPerm\Web\obj\Debug\Web.dll
+D:\Projects\ZopperPerm\Web\obj\Debug\Web.pdb

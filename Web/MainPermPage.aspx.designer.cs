@@ -31,22 +31,31 @@ namespace Web {
         protected global::System.Web.UI.WebControls.TextBox stringToPermute;
         
         /// <summary>
-        /// permutationsButton control.
+        /// kValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton permutationsButton;
+        protected global::System.Web.UI.WebControls.TextBox kValue;
         
         /// <summary>
-        /// combinationsButton control.
+        /// permutationButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton combinationsButton;
+        protected global::System.Web.UI.WebControls.RadioButton permutationButton;
+        
+        /// <summary>
+        /// combinationButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton combinationButton;
         
         /// <summary>
         /// generateButton control.
@@ -67,12 +76,12 @@ namespace Web {
         protected global::System.Web.UI.WebControls.Label total;
         
         /// <summary>
-        /// TextBox2 control.
+        /// mainOutput control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox mainOutput;
     }
 }

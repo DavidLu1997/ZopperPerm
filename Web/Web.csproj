@@ -61,6 +61,11 @@
     <Content Include="MainPermPage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatePermutations.cs" />
+    <Compile Include="Combinations.cs" />
+    <Compile Include="Factorial.cs" />
+    <Compile Include="Output.cs" />
+    <Compile Include="Permutations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MainPermPage.aspx.cs">
       <DependentUpon>MainPermPage.aspx</DependentUpon>
@@ -69,6 +74,7 @@
     <Compile Include="MainPermPage.aspx.designer.cs">
       <DependentUpon>MainPermPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Singleton.cs" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

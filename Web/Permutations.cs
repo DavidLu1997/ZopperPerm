@@ -14,6 +14,10 @@ namespace ZopperPerm
         {
             if (str.Length == 0)
                 return 0;
+            if (k > str.Length)
+            {
+                k = str.Length;
+            }
 
             //Get raw number
             ulong num = factorial(str.Length) / factorial(str.Length - k);
@@ -30,6 +34,10 @@ namespace ZopperPerm
         //Find permutations of length k
         public void perm(int k)
         {
+            if (k > str.Length)
+            {
+                k = str.Length;
+            }
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
             {
@@ -37,11 +45,8 @@ namespace ZopperPerm
             }
 
             //Get all combinations (n choose k)
-            string temp = filename;
-            setStreamWriter("");
             comb(k);
             List<string> s = l;
-            setStreamWriter(temp);
             initOutput(k);
 
             //Generate all permutations for each combination
