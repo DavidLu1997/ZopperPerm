@@ -20,6 +20,7 @@ namespace ZopperPerm
             l = null;
         }
 
+        //Get instance
         public static CalculatePermutations Instance
         {
             get
