@@ -8,7 +8,7 @@ Written in C# for .NET 4.5
 ## Minimum requirements
 - Intel Pentium 4 or equivalent
 - .NET Framework 4.5
-- Windows XP or above
+- Windows 7 or above (untested with Vista/XP)
 - 2 GB RAM (untested)
 - 1GB HDD
 
