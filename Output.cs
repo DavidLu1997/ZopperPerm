@@ -20,13 +20,6 @@ namespace ZopperPerm
             {
                 writer = new StreamWriter(filename);
             }
-            if (progress != null)
-            {
-                //TODO: Change
-                progress.Maximum = (int)(factorial(str.Length) / factorial(str.Length - k));
-                progress.Minimum = 0;
-                progress.Value = 0;
-            }
         }
 
         //Process output to correct form
@@ -40,10 +33,6 @@ namespace ZopperPerm
             {
                 l.Add(s);
             }
-            if (progress != null)
-            {
-                progress.Value++;
-            }
         }
 
         //Finalize output
@@ -54,12 +43,6 @@ namespace ZopperPerm
             {
                 l = l.Distinct().ToList();
                 l.Sort();
-            }
-
-            //If progress bar
-            if (progress != null)
-            {
-                progress.Value = 0;
             }
             //Close and return
             if (writer != null)

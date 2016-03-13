@@ -12,9 +12,6 @@ namespace ZopperPerm
     {
         //String to permute
         private string str;
-        
-        //ProgressBar
-        ProgressBar progress;
 
         //StreamWriter
         StreamWriter writer;
@@ -29,12 +26,6 @@ namespace ZopperPerm
         public void setString(string s)
         {
             this.str = s;
-        }
-
-        //Set progress bar
-        public void setProgressBar(System.Windows.Forms.ProgressBar p)
-        {
-            this.progress = p;
         }
 
         //Set StreamWriter

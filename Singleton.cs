@@ -15,7 +15,6 @@ namespace ZopperPerm
         private CalculatePermutations()
         {
             this.str = "";
-            progress = null;
             writer = null;
             l = null;
         }

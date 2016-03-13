@@ -26,7 +26,6 @@ namespace ZopperPerm
         {
             InitializeComponent();
             permutationButton.Checked = true;
-            progressBar.Visible = false;
             totalCount = 0;
             c = CalculatePermutations.Instance;
         }
@@ -56,9 +55,7 @@ namespace ZopperPerm
             mainOutput.Clear();
 
             //Otherwise create object to get permutations
-            progressBar.Visible = true;
             c.setString(stringToPermute.Text);
-            c.setProgressBar(progressBar);
             string filename = "";
             if (fileOutput.Checked)
             {
@@ -77,7 +74,6 @@ namespace ZopperPerm
             {
                 mainOutput.Lines = c.getOutput().ToArray();
             }
-            progressBar.Visible = false;
         }
 
         //Change k bounds

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PermMainWindow));
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.stringToPermute = new System.Windows.Forms.TextBox();
             this.permutationButton = new System.Windows.Forms.RadioButton();
@@ -50,13 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.kValue)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // progressBar
-            // 
-            this.progressBar.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.progressBar, "progressBar");
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Step = 1;
             // 
             // label1
             // 
@@ -179,7 +171,6 @@
             this.Controls.Add(this.permutationButton);
             this.Controls.Add(this.stringToPermute);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.menuStrip1);
             this.HelpButton = true;
             this.KeyPreview = true;
@@ -196,7 +187,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox stringToPermute;
         private System.Windows.Forms.RadioButton permutationButton;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.IO;
 using System.Diagnostics;
 
@@ -29,7 +29,6 @@ namespace ZopperPerm
         }
 
         //Find permutations of length k
-        //Iterative solution
         public void perm(int k)
         {
             //Immediately exit if k invalid
@@ -38,58 +37,32 @@ namespace ZopperPerm
                 return;
             }
 
-            //Get all combinations (n choose k)
-            string temp = filename;
-            setStreamWriter("");
-            comb(k);
-            List<string> s = l;
-            setStreamWriter(temp);
+            //Initialize output
             initOutput(k);
 
-            //Generate all permutations for each combination
-            //Using Heap's Algorithm
-            for (int i = 0; i < s.Count; i++)
+            //Start a thread for each combination
+            Thread[] threads = new Thread[k];
+            for (int i = 0; i < k; i++)
             {
-                List<int> q = new List<int>(new int[k]);
-                char[] n = s[i].ToCharArray();
-
-                for (int j = 0; j < q.Count; j++)
-                {
-                    q[j] = 0;
-                }
-
-                //Add current
-                processOutput(s[i]);
-
-                //Start index and jndex
-                int idx = 1;
-                int jdx = 0;
-                char tmp;
-                while (idx < k)
-                {
-                    if (q[idx] < idx)
-                    {
-                        jdx = idx % 2 * q[idx];
-                        tmp = n[jdx];
-                        n[jdx] = n[idx];
-                        n[idx] = tmp;
-                        processOutput(new string(n));
-                        q[idx]++;
-                        idx = 1;
-                    }
-                    else
-                    {
-                        q[idx] = 0;
-                        idx++;
-                    }
-                }
+                threads[i] = new Thread(() => recursivePerm(str.Substring(0, i), str.Substring(i), k));
+                threads[i].Start();
+                threads[i].Join();
             }
 
+            //Synchronize threads
+            for (int i = k - 1, j = k; i >= 0 && j > 0;)
+            {
+                if(!threads[i].IsAlive) {
+                    j--;
+                    threads[i].Join();
+                    i--;
+                }
+            }
             finishOutput();
         }
 
         //Find permutations, recursive
-        public void recursivePerm(string cur, string next, int k)
+        private void recursivePerm(string cur, string next, int k)
         {
             //If done, return
             if (cur.Length == k)
