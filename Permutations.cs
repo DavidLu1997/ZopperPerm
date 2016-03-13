@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace ZopperPerm
 {
@@ -28,6 +29,7 @@ namespace ZopperPerm
         }
 
         //Find permutations of length k
+        //Iterative solution
         public void perm(int k)
         {
             //Immediately exit if k invalid
@@ -84,6 +86,26 @@ namespace ZopperPerm
             }
 
             finishOutput();
+        }
+
+        //Find permutations, recursive
+        public void recursivePerm(string cur, string next, int k)
+        {
+            //If done, return
+            if (cur.Length == k)
+            {
+                processOutput(cur);
+                //Debug.WriteLine(cur);
+            }
+
+            //Otherwise keep going
+            else
+            {
+                for (int i = 0; i < next.Length; i++)
+                {
+                    recursivePerm(cur + next.ElementAt(i), next.Substring(0, i) + next.Substring(i + 1), k);
+                }
+            }
         }
     }
 }
