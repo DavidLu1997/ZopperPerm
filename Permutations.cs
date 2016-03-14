@@ -40,24 +40,10 @@ namespace ZopperPerm
             //Initialize output
             initOutput(k);
 
-            //Start a thread for each combination
-            Thread[] threads = new Thread[k];
-            for (int i = 0; i < k; i++)
-            {
-                threads[i] = new Thread(() => recursivePerm(str.Substring(0, i), str.Substring(i), k));
-                threads[i].Start();
-                threads[i].Join();
-            }
+            //Recursive call
+            recursivePerm("", str, k);
 
-            //Synchronize threads
-            for (int i = k - 1, j = k; i >= 0 && j > 0;)
-            {
-                if(!threads[i].IsAlive) {
-                    j--;
-                    threads[i].Join();
-                    i--;
-                }
-            }
+            //Finish
             finishOutput();
         }
 
@@ -77,6 +63,8 @@ namespace ZopperPerm
                 for (int i = 0; i < next.Length; i++)
                 {
                     recursivePerm(cur + next.ElementAt(i), next.Substring(0, i) + next.Substring(i + 1), k);
+                    //Thread t = new Thread(() => recursivePerm(cur + next.ElementAt(i), next.Substring(0, i) + next.Substring(i + 1), k));
+                    //t.Start();
                 }
             }
         }
