@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Diagnostics;
 
 namespace ZopperPerm
 {
@@ -96,6 +97,32 @@ namespace ZopperPerm
             }
 
             finishOutput();
+        }
+
+        //Recursive version of combinations
+        public void recursiveComb(string s, int id, int st, int en, int k)
+        {
+            //If finished, output
+            if (id == k)
+            {
+                processOutput(s.Substring(0, k));
+                //Debug.WriteLine(s.Substring(0, k));
+            }
+
+            //Otherwise recurse through all possibilities
+            else
+            {
+                char[] temp;
+                //Run through all cases
+                for (int i = st; i <= en && en - i + 1 >= k - id; i++)
+                {
+                    temp = s.ToCharArray();
+                    temp[id] = s[i];
+
+                    //Call recursively
+                    recursiveComb(new string(temp), id + 1, st + 1, en, k);
+                }
+            }
         }
     }
 }
