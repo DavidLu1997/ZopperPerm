@@ -29,84 +29,30 @@ namespace ZopperPerm
         //Find Combinations of length k
         public void comb(int k)
         {
-            initOutput(k);
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)
             {
                 return;
             }
 
-            //Convert to char array
-            char[] inp = str.ToCharArray();
+            //Initialize output
+            initOutput(k);
 
-            //Temp string
-            string temp;
+            //Recursive call
+            recursiveComb(str, 0, 0, str.Length - 1, k);
 
-            //Temp char array
-            char[] tempA;
-
-            //Stacks
-            Stack<string> s = new Stack<string>();
-            Stack<int> start = new Stack<int>();
-            Stack<int> end = new Stack<int>();
-            Stack<int> index = new Stack<int>();
-
-            //Initialization
-            s.Push(str);
-            start.Push(0);
-            end.Push(str.Length - 1);
-            index.Push(0);
-
-            int st, en, idx;
-
-            //While we still have more things to do
-            while (s.Count != 0)
-            {
-                if (index.First() == k)
-                {
-                    processOutput(s.First().Substring(0, k));
-                    index.Pop();
-                    s.Pop();
-                    start.Pop();
-                    end.Pop();
-                }
-
-                else
-                {
-                    //Pop
-                    st = start.First();
-                    start.Pop();
-                    en = end.First();
-                    end.Pop();
-                    idx = index.First();
-                    index.Pop();
-                    temp = s.First();
-                    s.Pop();
-                    for (int i = st; i <= en && en - i + 1 >= k - idx; i++)
-                    {
-                        //Change character
-                        tempA = temp.ToCharArray();
-                        tempA[idx] = inp[i];
-
-                        s.Push(new string(tempA));
-                        start.Push(i + 1);
-                        end.Push(en);
-                        index.Push(idx + 1);
-                    }
-                }
-            }
-
+            //Finish
             finishOutput();
         }
 
         //Recursive version of combinations
-        public void recursiveComb(string s, int id, int st, int en, int k)
+        private void recursiveComb(string s, int id, int st, int en, int k)
         {
             //If finished, output
             if (id == k)
             {
                 processOutput(s.Substring(0, k));
-                //Debug.WriteLine(s.Substring(0, k));
+                Debug.WriteLine(s.Substring(0, k));
             }
 
             //Otherwise recurse through all possibilities
@@ -117,7 +63,8 @@ namespace ZopperPerm
                 for (int i = st; i <= en && en - i + 1 >= k - id; i++)
                 {
                     temp = s.ToCharArray();
-                    temp[id] = s[i];
+                    temp[id] = str.ElementAt(i);
+                    temp[i] = str.ElementAt(id);
 
                     //Call recursively
                     recursiveComb(new string(temp), id + 1, st + 1, en, k);
