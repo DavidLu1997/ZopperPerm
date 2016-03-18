@@ -304,7 +304,7 @@
     <value>True</value>
   </data>
   <data name="total.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 23</value>
+    <value>12, 485</value>
   </data>
   <data name="total.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 13</value>
@@ -331,7 +331,7 @@
     <value>True</value>
   </data>
   <data name="fileOutput.Location" type="System.Drawing.Point, System.Drawing">
-    <value>556, 22</value>
+    <value>418, 484</value>
   </data>
   <data name="fileOutput.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 17</value>
@@ -355,7 +355,7 @@
     <value>1</value>
   </data>
   <data name="fileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>628, 20</value>
+    <value>490, 482</value>
   </data>
   <data name="fileName.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
