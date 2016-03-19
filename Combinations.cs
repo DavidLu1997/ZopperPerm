@@ -66,6 +66,7 @@ namespace ZopperPerm
             {
                 if (index.First() == k)
                 {
+                    //Process output
                     processOutput(s.First().Substring(0, k));
                     index.Pop();
                     s.Pop();
@@ -90,6 +91,7 @@ namespace ZopperPerm
                         tempA = temp.ToCharArray();
                         tempA[idx] = inp[i];
 
+                        //Push onto stack
                         s.Push(new string(tempA));
                         start.Push(i + 1);
                         end.Push(en);

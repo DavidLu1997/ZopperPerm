@@ -23,7 +23,9 @@ namespace ZopperPerm
                 return facts[n];
             }
 
-            //Otherwise return 0, signal to use BigInteger
+            //Otherwise return 0
+            //TODO: Implement BigInteger
+            //Actually pretty useless, as files will overflow
             return 0;
         }
     }
