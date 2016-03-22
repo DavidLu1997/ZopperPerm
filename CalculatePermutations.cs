@@ -14,13 +14,13 @@ namespace ZopperPerm
         private string str;
 
         //StreamWriter
-        StreamWriter writer;
+        private StreamWriter writer;
 
         //File path
-        string filename;
+        private string filename;
 
         //Output list
-        List<string> l;
+        private List<string> l;
 
         //Set string
         public void setString(string s)
