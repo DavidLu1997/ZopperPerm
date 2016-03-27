@@ -17,16 +17,7 @@ namespace ZopperPerm
         //Calculate factorial
         private ulong factorial(int n)
         {
-            //If precomputed
-            if (n < facts.Count)
-            {
-                return facts[n];
-            }
-
-            //Otherwise return 0
-            //TODO: Implement BigInteger
-            //Actually pretty useless, as files will overflow
-            return 0;
+            return facts[n];
         }
     }
 }
