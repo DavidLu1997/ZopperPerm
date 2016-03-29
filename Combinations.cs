@@ -103,31 +103,5 @@ namespace ZopperPerm
             //Done
             finishOutput();
         }
-
-        //Recursive version of combinations
-        private void recursiveComb(string s, int id, int st, int en, int k)
-        {
-            //If finished, output
-            if (id == k)
-            {
-                processOutput(s.Substring(0, k));
-            }
-
-            //Otherwise recurse through all possibilities
-            else
-            {
-                char[] temp;
-                //Run through all cases
-                for (int i = st; i <= en && en - i + 1 >= k - id; i++)
-                {
-                    temp = s.ToCharArray();
-                    temp[id] = str.ElementAt(i);
-                    temp[i] = str.ElementAt(id);
-
-                    //Call recursively
-                    recursiveComb(new string(temp), id + 1, st + 1, en, k);
-                }
-            }
-        }
     }
 }
