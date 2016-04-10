@@ -37,24 +37,25 @@ namespace ZopperPerm
                 return;
             }
 
+            this.k = k;
+
             //Initialize output
-            initOutput(k);
+            initOutput();
 
             //Recursive call
-            recursivePerm("", str, k);
+            recursivePerm("", str);
 
             //Finish
             finishOutput();
         }
 
         //Find permutations, recursive
-        private void recursivePerm(string cur, string next, int k)
+        private void recursivePerm(string cur, string next)
         {
             //If done, return
             if (cur.Length == k)
             {
                 processOutput(cur);
-                //Debug.WriteLine(cur);
             }
 
             //Otherwise keep going
@@ -62,9 +63,7 @@ namespace ZopperPerm
             {
                 for (int i = 0; i < next.Length; i++)
                 {
-                    recursivePerm(cur + next.ElementAt(i), next.Substring(0, i) + next.Substring(i + 1), k);
-                    //Thread t = new Thread(() => recursivePerm(cur + next.ElementAt(i), next.Substring(0, i) + next.Substring(i + 1), k));
-                    //t.Start();
+                    recursivePerm(cur + next.ElementAt(i), next.Substring(0, i) + next.Substring(i + 1));
                 }
             }
         }

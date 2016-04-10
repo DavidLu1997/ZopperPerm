@@ -10,7 +10,7 @@ namespace ZopperPerm
     public partial class CalculatePermutations
     {
         //Initialize output
-        private void initOutput(int k)
+        private void initOutput()
         {
             if (filename == "" || filename == null)
             {

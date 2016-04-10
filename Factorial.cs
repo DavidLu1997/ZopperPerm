@@ -9,6 +9,7 @@ namespace ZopperPerm
     public partial class CalculatePermutations 
     {
         //Maximum factorial using ulong
+        //Going above 20 is pointless
         private const int maxF = 20;
 
         //Precomputed factorials, up to maxF

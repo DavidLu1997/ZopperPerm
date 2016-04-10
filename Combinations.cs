@@ -29,8 +29,10 @@ namespace ZopperPerm
         //Find Combinations of length k
         public void comb(int k)
         {
+            this.k = k;
+
             //Start
-            initOutput(k);
+            initOutput();
 
             //Immediately exit if k invalid
             if (k > str.Length || k == 0)

@@ -21,6 +21,9 @@ namespace ZopperPerm
 
         //Output list
         private List<string> l;
+        
+        //k value
+        private int k;
 
         //Set string
         public void setString(string s)
