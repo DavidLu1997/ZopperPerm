@@ -16,17 +16,13 @@ namespace ZopperPerm
             if (str.Length == 0)
                 return 0;
 
-            //As combinations are actually really small
-            //Several order of magnitudes smaller
-            //And finding out how to deal with repetitions is hard
-            //We just calculate it
+            //Lazy man's way
             comb(k);
             return (ulong)l.Count(); ;
         }
 
-
-
         //Find Combinations of length k
+        //TODO: Rewrite recursively? Stacks are bad
         public void comb(int k)
         {
             this.k = k;
